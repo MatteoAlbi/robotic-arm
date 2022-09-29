@@ -71,7 +71,7 @@ def compute_graph(edges, x ,y, precision, tollerance):
         graph.manage_links(node, links)
 
     if len(graph.nodes)>2:
-        return DPS(graph)
+        return DFS(graph)
 
                 
 def generate_cell(edges,center,precision):
@@ -194,8 +194,8 @@ def find_lines(cell, edges, i, j, tollerance):
 
     return links
 
-def DPS(graph):
-    if booldebug: print("DPS start")
+def DFS(graph):
+    if booldebug: print("DFS start")
     if booldebug: print("n nodes ",len(graph.nodes))
     q = Queue("nodi")
     path = []
@@ -236,7 +236,7 @@ def DPS(graph):
             q.pop()
             back = True
 
-    if booldebug: print("DPS ended")
+    if booldebug: print("DFS ended")
     return path
 
 def merge(vett):
